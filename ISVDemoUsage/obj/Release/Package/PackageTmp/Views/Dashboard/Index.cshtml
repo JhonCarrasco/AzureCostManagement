@@ -1,0 +1,224 @@
+﻿@model ISVDemoUsage.Forms.SubscriptionForm
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+
+<div class="container">
+    <div class="form-group">
+        <div class="col-md-7">
+            @Html.DropDownListFor(m => m.SubscriptionId, Model.subscriptionControl.Listado, "Subscripción...", new { @class = "form-control", @Style = "text-align:left", @id = "cbSubscription" })
+        </div>
+        <div class="col-md-offset-5">
+
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-7">
+            @Html.DropDownListFor(m => m.ResourceGroupId, Model.ListadoResourceGroup, "Grupos de recursos...", new { @class = "form-control", @Style = "text-align:left", @id = "cbResourceGroup" })
+        </div>
+        <div class="col-md-offset-5">
+
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-7">
+            @Html.DropDownListFor(m => m.ResourceId, Model.ListadoResource, "Recursos...", new { @class = "form-control", @Style = "text-align:left", @id = "cbResource" })
+        </div>
+        <div class="col-md-offset-5">
+            
+        </div>
+    </div>
+    <br />
+    <div class="form-group">
+        <div class="col-md-7">
+            @Html.DropDownListFor(m => m.DefinitionId, Model.ListadoDefinitions, "Definiciones de métricas...", new { @class = "form-control", @Style = "text-align:left", @id = "cbMetricDefinition" })
+        </div>
+        <div class="col-md-offset-5">
+
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="button" class="btn btn-primary" value="Metric" id="btnMetric" />
+    </div>
+
+
+    <hr />
+    <div class="container" id="divMetrics" hidden>
+        <div class="form-group">
+            <label class="col-md-2">Id</label>
+            <label class="col-md-10" id="lb_id"></label>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2">Type</label>
+            <label class="col-md-10" id="lb_type"></label>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2">Name</label>
+            <label class="col-md-10" id="lb_name"></label>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2">Display Description</label>
+            <label class="col-md-10" id="lb_displayDescription"></label>
+        </div>
+
+        <table class="table" id="tableMetric">
+        </table>
+
+    </div>
+
+
+
+    <script>
+    const cbSubscription = document.querySelector("#cbSubscription");
+    const cbResourceGroup = document.querySelector("#cbResourceGroup");
+    const cbResource = document.querySelector("#cbResource");
+    const cbMetricDefinition = document.querySelector('#cbMetricDefinition');
+    const btnBuscar = document.querySelector("#btnMetric");
+
+    const divMetrics = document.querySelector('#divMetrics');
+    const tableMetric = document.querySelector("#tableMetric");
+    const lb_id = document.querySelector("#lb_id");
+        const lb_type = document.querySelector("#lb_type");
+        const lb_name = document.querySelector("#lb_name");
+    const lb_displayDescription = document.querySelector("#lb_displayDescription");
+
+    cbSubscription.addEventListener('change', () => {
+        const subscriptionId = cbSubscription.value;
+        const organizationId = getOrganization();
+        if (!(subscriptionId === '')) {
+            $.get('@Url.Action("GetResourceGroupList")', { subscriptionId: subscriptionId, organizationId: organizationId},
+                function (result) {
+                    if (result.success)
+                        if (result.data != null) {
+                            cbResourceGroup.innerHTML = '';
+                            cbResource.innerHTML = '';
+                            let first = document.createElement('option');
+                            first.text = 'Grupos de recursos...';
+                            cbResourceGroup.add(first);
+                            let second = document.createElement('option');
+                            second.text = 'Recursos...';
+                            cbResource.add(second);
+                            for (let i = 0; i < result.data.length; i++) {
+                                let option = document.createElement('option');
+                                option.text = result.data[i].Name;
+                                option.value = result.data[i].Id;
+                                cbResourceGroup.add(option);
+                            }
+                        }
+                    //window.location.href = "/BlackList/Create";
+               });
+        }
+    });
+
+    cbResourceGroup.addEventListener('change', () => {
+        const subscriptionId = cbSubscription.value;
+        const organizationId = getOrganization();
+        const resourceGroupId = cbResourceGroup.value;
+        const resourceGroup = cbResourceGroup.options[cbResourceGroup.selectedIndex].text;
+        if (!(resourceGroupId === '')) {
+            $.get('@Url.Action("GetResourceList")', { subscriptionId: subscriptionId, organizationId: organizationId, resourceGroup: resourceGroup},
+                function (result) {
+                    if (result.success)
+                        if (result.data != null) {
+                            cbResource.innerHTML = '';
+                            let first = document.createElement('option');
+                            first.text = 'Recursos...';
+                            cbResource.add(first);
+                            for (let i = 0; i < result.data.length; i++) {
+                                let option = document.createElement('option');
+                                option.text = result.data[i].Name;
+                                option.value = result.data[i].Id;
+                                cbResource.add(option);
+                            }
+                        }
+               });
+        }
+    });
+
+    cbResource.addEventListener('change', () => {
+
+        tableMetric.innerHTML = '';
+        divMetrics.style.display = 'none';
+        cbMetricDefinition.innerHTML = '';
+
+        const organizationId = getOrganization();
+        const resourceUri = cbResource.value
+
+        if (!(resourceUri === '')) {
+            $.get('@Url.Action("GetMetricDefinitions")', { organizationId: organizationId, resourceUri: resourceUri },
+                function (result) {
+                    if (result.success)
+                        if (result.data != null) {
+                            let first = document.createElement('option');
+                            first.text = 'Definiciones de métricas...';
+                            cbMetricDefinition.add(first);
+                            for (let i = 0; i < result.data.length; i++) {
+                                let option = document.createElement('option');
+                                option.text = result.data[i].name.localizedValue;
+                                option.value = result.data[i].id;
+                                cbMetricDefinition.add(option);
+                            }
+                        }
+               });
+        }
+
+    });
+
+    cbMetricDefinition.addEventListener('change', () => {
+        const id = cbMetricDefinition.value;
+        const metricName = cbMetricDefinition.options[cbMetricDefinition.selectedIndex].text;
+        console.log('id: ' + id);
+        console.log('metricName: ' + metricName);
+    });
+
+
+
+    const getOrganization = () => {
+        let org = '';
+        if ('@Model.subscriptionControl._listado' != null) {
+            org = '@Model.subscriptionControl._listado[0].OrganizationId';
+        }
+        return org;
+    }
+
+    btnBuscar.addEventListener('click', () => {
+        const organizationId = getOrganization();
+        const resourceUri = cbResource.value;
+        const metricnames = cbMetricDefinition.options[cbMetricDefinition.selectedIndex].text;
+        if (!(organizationId === '' || resourceUri === '')) {
+            console.log(resourceUri);
+            $.get('@Url.Action("GetMetricsResource")', { organizationId: organizationId, resourceUri: resourceUri, metricnames: metricnames},
+                function (result) {
+                    if (result.success)
+                        if (result.data != null) {
+                            tableMetric.innerHTML = '';
+                            divMetrics.style.display = 'none';
+                            lb_id.innerHTML = '';
+                            lb_type.innerHTML = '';
+                            lb_name.innerHTML = '';
+                            lb_displayDescription.innerHTML = '';
+                            
+
+                            lb_id.innerHTML = result.data.value[0].id;
+                            lb_type.innerHTML = result.data.value[0].type;
+                            lb_name.innerHTML = result.data.value[0].name.value;
+                            lb_displayDescription.innerHTML = result.data.value[0].displayDescription;
+
+                            tableMetric.innerHTML = '<tr><th><label>TimeStamp</label></th><th><label>Average</label></th>';
+                            for (var i = 0; i < result.data.value[0].timeseries[0].data.length; i++) {
+                                tableMetric.innerHTML += '<tr><td>' + result.data.value[0].timeseries[0].data[i].timeStamp + '</td><td>' + result.data.value[0].timeseries[0].data[i].average +'</td></tr>';
+                            }
+                            divMetrics.style.display = 'block';
+                        }
+               });
+        }
+    })
+
+
+    </script>

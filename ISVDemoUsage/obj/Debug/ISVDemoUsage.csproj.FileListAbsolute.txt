@@ -1,0 +1,99 @@
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\ISVDemoUsage.dll.config
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\ISVDemoUsage.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\ISVDemoUsage.pdb
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Antlr3.Runtime.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\EntityFramework.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\EntityFramework.SqlServer.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.Cookies.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.OpenIdConnect.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Web.Infrastructure.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Newtonsoft.Json.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Owin.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Helpers.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Mvc.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Optimization.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Razor.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.Deployment.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.Razor.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\WebGrease.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\EntityFramework.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\EntityFramework.SqlServer.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.Cookies.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.OpenIdConnect.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Helpers.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Mvc.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Optimization.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Razor.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.Deployment.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.Razor.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Antlr3.Runtime.pdb
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Newtonsoft.Json.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\obj\Debug\ISVDemoUsage.csprojAssemblyReference.cache
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\obj\Debug\ISVDemoUsage.csproj.CoreCompileInputs.cache
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\obj\Debug\ISVDemoUsage.csproj.CopyComplete
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\obj\Debug\ISVDemoUsage.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant\WebApp-Billing-MultiTenant\ISVDemoUsage\obj\Debug\ISVDemoUsage.pdb
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\ISVDemoUsage.dll.config
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\ISVDemoUsage.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\ISVDemoUsage.pdb
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Antlr3.Runtime.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\EntityFramework.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\EntityFramework.SqlServer.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.WindowsForms.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.Cookies.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.OpenIdConnect.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Web.Infrastructure.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Newtonsoft.Json.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Owin.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Helpers.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Mvc.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Optimization.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Razor.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.Deployment.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.Razor.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\WebGrease.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\EntityFramework.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\EntityFramework.SqlServer.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.IdentityModel.Clients.ActiveDirectory.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.Cookies.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Microsoft.Owin.Security.OpenIdConnect.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Helpers.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Mvc.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Optimization.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.Razor.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.Deployment.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\System.Web.WebPages.Razor.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Antlr3.Runtime.pdb
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\bin\Newtonsoft.Json.xml
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\obj\Debug\ISVDemoUsage.csproj.CoreCompileInputs.cache
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\obj\Debug\ISVDemoUsage.csproj.CopyComplete
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\obj\Debug\ISVDemoUsage.dll
+C:\ignite\local\billing-dotnet-webapp-multitenant - Copy\WebApp-Billing-MultiTenant\ISVDemoUsage\obj\Debug\ISVDemoUsage.pdb
