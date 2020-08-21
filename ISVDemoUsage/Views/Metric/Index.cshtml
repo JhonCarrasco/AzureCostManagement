@@ -1,0 +1,366 @@
+﻿@model ISVDemoUsage.Forms.SubscriptionForm
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Métricas</h2>
+
+@if (Request.IsAuthenticated)
+{
+
+    <div class="container">
+        <div class="card-box">
+            <div class="form-group">
+                <div class="col-md-7">
+                    @Html.DropDownListFor(m => m.SubscriptionId, Model.subscriptionControl.Listado, "Subscripción...", new { @class = "form-control", @Style = "text-align:left", @id = "cbSubscription" })
+                </div>
+                <div class="col-md-offset-5">
+
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-7">
+                    @Html.DropDownListFor(m => m.ResourceGroupId, Model.ListadoResourceGroup, "Grupos de recursos...", new { @class = "form-control", @Style = "text-align:left", @id = "cbResourceGroup" })
+                </div>
+                <div class="col-md-offset-5">
+
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-7">
+                    @Html.DropDownListFor(m => m.ResourceId, Model.ListadoResource, "Recursos...", new { @class = "form-control", @Style = "text-align:left", @id = "cbResource" })
+                </div>
+                <div class="col-md-offset-5">
+
+                </div>
+            </div>
+            <br />
+            <div class="form-group">
+                <div class="col-md-7">
+                    @Html.DropDownListFor(m => m.DefinitionId, Model.ListadoDefinitions, "Definiciones de métricas (metricnames)...", new { @class = "form-control", @Style = "text-align:left", @id = "cbMetricDefinition" })
+                </div>
+                <div class="col-md-offset-5">
+
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">timespan</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" placeholder="Ej: 2017-04-14T02:20:00Z/2017-04-14T04:20:00Z" id="txt_timespan">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">interval</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" placeholder="Ej: PT1M" id="txt_interval">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">aggregation</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" placeholder="Ej: Average,count" id="txt_aggregation">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">top</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" id="txt_top">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">orderby</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" id="txt_orderby">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">$filter</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" id="txt_filter" readonly="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">resultType</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" id="txt_resultType" readonly="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">api-version</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" value="2018-01-01" placeholder="Ej: 2018-01-01" id="txt_api_version" style="font-weight: bold;">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">metricnamespace</label>
+                <div class="col-8">
+                    <input type="text" class="form-control" id="txt_metricnamespace">
+                </div>
+            </div>
+
+
+
+
+            <div class="form-group">
+                <input type="button" class="btn btn-primary" value="Metric" id="btnMetric" />
+            </div>
+
+        </div>
+        <hr />
+        <div id="divMetrics" style="display: none;">
+            <div class="form-group row">
+                <label class="col-1 col-form-label">Json</label>
+                <div class="col-11">
+                    <textarea class="form-control" rows="10" readonly="" id="txa_datajson"></textarea>
+                </div>
+            </div>
+            <div class="card-box">
+                <h4 class="m-t-0 m-b-30 header-title">Response</h4>
+                <div class="form-group row">
+                    <label class="col-3 col-form-label">Id</label>
+                    <div class="col-9">
+                        <textarea class="form-control" rows="5" readonly="" id="lb_id"></textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-3 col-form-label">Type</label>
+                    <div class="col-9">
+                        <input type="text" class="form-control" readonly="" id="lb_type">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-3 col-form-label">Name</label>
+                    <div class="col-9">
+                        <input type="text" class="form-control" readonly="" id="lb_name">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-3 col-form-label">Display Description</label>
+                    <div class="col-9">
+                        <input type="text" class="form-control" readonly="" id="lb_displayDescription">
+                    </div>
+                </div>
+            </div>
+
+            <table class="table" id="tableMetric">
+            </table>
+
+        </div>
+    </div>
+
+
+
+    <script>
+    const cbSubscription = document.querySelector("#cbSubscription");
+    const cbResourceGroup = document.querySelector("#cbResourceGroup");
+    const cbResource = document.querySelector("#cbResource");
+    const cbMetricDefinition = document.querySelector('#cbMetricDefinition');
+    const btnBuscar = document.querySelector("#btnMetric");
+
+    const divMetrics = document.querySelector('#divMetrics');
+    const tableMetric = document.querySelector("#tableMetric");
+    const lb_id = document.querySelector("#lb_id");
+    const lb_type = document.querySelector("#lb_type");
+    const lb_name = document.querySelector("#lb_name");
+    const lb_displayDescription = document.querySelector("#lb_displayDescription");
+
+    const txt_timespan = document.querySelector("#txt_timespan");
+    const txt_interval = document.querySelector("#txt_interval");
+    const txt_aggregation = document.querySelector("#txt_aggregation");
+    const txt_top = document.querySelector("#txt_top");
+    const txt_orderby = document.querySelector("#txt_orderby");
+    const txt_filter = document.querySelector("#txt_filter");
+    const txt_resultType = document.querySelector("#txt_resultType");
+    const txt_api_version = document.querySelector("#txt_api_version");
+    const txt_metricnamespace = document.querySelector("#txt_metricnamespace");
+
+    const txa_datajson = document.querySelector("#txa_datajson");
+
+
+    cbSubscription.addEventListener('change', () => {
+        const subscriptionId = cbSubscription.value;
+        const organizationId = getOrganization();
+        if (!(subscriptionId === '')) {
+            $.get('@Url.Action("GetResourceGroupList")', { subscriptionId: subscriptionId, organizationId: organizationId},
+                function (result) {
+                    if (result.success)
+                        if (result.data != null) {
+                            cbResourceGroup.innerHTML = '';
+                            cbResource.innerHTML = '';
+                            let first = document.createElement('option');
+                            first.text = 'Grupos de recursos...';
+                            cbResourceGroup.add(first);
+                            let second = document.createElement('option');
+                            second.text = 'Recursos...';
+                            cbResource.add(second);
+                            for (let i = 0; i < result.data.length; i++) {
+                                let option = document.createElement('option');
+                                option.text = result.data[i].Name;
+                                option.value = result.data[i].Id;
+                                cbResourceGroup.add(option);
+                            }
+                        }
+                    //window.location.href = "/BlackList/Create";
+               });
+        }
+    });
+
+    cbResourceGroup.addEventListener('change', () => {
+        const subscriptionId = cbSubscription.value;
+        const organizationId = getOrganization();
+        const resourceGroupId = cbResourceGroup.value;
+        const resourceGroup = cbResourceGroup.options[cbResourceGroup.selectedIndex].text;
+        if (!(resourceGroupId === '')) {
+            $.get('@Url.Action("GetResourceList")', { subscriptionId: subscriptionId, organizationId: organizationId, resourceGroup: resourceGroup},
+                function (result) {
+                    if (result.success)
+                        if (result.data != null) {
+                            cbResource.innerHTML = '';
+                            let first = document.createElement('option');
+                            first.text = 'Recursos...';
+                            cbResource.add(first);
+                            for (let i = 0; i < result.data.length; i++) {
+                                let option = document.createElement('option');
+                                option.text = result.data[i].Name;
+                                option.value = result.data[i].Id;
+                                cbResource.add(option);
+                            }
+                        }
+               });
+        }
+    });
+
+    cbResource.addEventListener('change', () => {
+
+        tableMetric.innerHTML = '';
+        divMetrics.style.display = 'none';
+        cbMetricDefinition.innerHTML = '';
+
+        const organizationId = getOrganization();
+        const resourceUri = cbResource.value
+
+        if (!(resourceUri === '')) {
+            $.get('@Url.Action("GetMetricDefinitions")', { organizationId: organizationId, resourceUri: resourceUri },
+                function (result) {
+                    if (result.success)
+                        if (result.data != null) {
+                            let first = document.createElement('option');
+                            first.text = 'Definiciones de métricas (metricnames)...';
+                            cbMetricDefinition.add(first);
+                            for (let i = 0; i < result.data.length; i++) {
+                                let option = document.createElement('option');
+                                option.text = result.data[i].name.localizedValue;
+                                option.value = result.data[i].id;
+                                cbMetricDefinition.add(option);
+                            }
+                        }
+               });
+        }
+
+    });
+
+    cbMetricDefinition.addEventListener('change', () => {
+        const id = cbMetricDefinition.value;
+        const metricName = cbMetricDefinition.options[cbMetricDefinition.selectedIndex].text;
+        console.log('id: ' + id);
+        console.log('metricName: ' + metricName);
+    });
+
+
+
+    const getOrganization = () => {
+        let org = '';
+        if ('@Model.subscriptionControl._listado' != null) {
+            org = '@Model.subscriptionControl._listado[0].OrganizationId';
+        }
+        return org;
+    }
+
+    btnBuscar.addEventListener('click', () => {
+        const organizationId = getOrganization();
+        const resourceUri = cbResource.value;
+        const metricnames = cbMetricDefinition.options[cbMetricDefinition.selectedIndex].text;
+
+        const timespan = txt_timespan.value;
+        const interval = txt_interval.value;
+        const aggregation = txt_aggregation.value;
+        const top = txt_top.value;
+        const orderby = txt_orderby.value;
+        const filter = txt_filter.value;
+        const resultType = txt_resultType.value;
+        const api_version = txt_api_version.value;
+        const metricnamespace = txt_metricnamespace.value;
+
+
+
+
+        if (!(organizationId === '' || resourceUri === '')) {
+            //console.log('organizationId: ' + organizationId);
+            //console.log('resourceUri: ' + resourceUri);
+            //console.log('metricnames: ' + metricnames);
+            //console.log('timespan: ' + timespan);
+            //console.log('interval: ' + interval);
+            //console.log('aggregation: ' + aggregation);
+            //console.log('top: ' + top);
+            //console.log('orderby: ' + orderby);
+            //console.log('filter: ' + filter);
+            //console.log('resultType: ' + resultType);
+            //console.log('api_version: ' + api_version);
+            //console.log('metricnamespace: ' + metricnamespace);
+
+            $.get('@Url.Action("GetMetricsResource")',
+                {
+                    organizationId: organizationId,
+                    resourceUri: resourceUri,
+                    metricnames: metricnames,
+                    timespan: timespan,
+                    interval: interval,
+                    aggregation: aggregation,
+                    top: top,
+                    orderby: orderby,
+                    filter: filter,
+                    resultType: resultType,
+                    api_version: api_version,
+                    metricnamespace: metricnamespace
+                },
+                function (result) {
+                    if (result.success)
+                        if (result.datajsonFormatted != null) {
+                            console.log(result.data);
+
+                            tableMetric.innerHTML = '';
+                            divMetrics.style.display = 'none';
+                            lb_id.innerHTML = '';
+                            lb_type.value = '';
+                            lb_name.value = '';
+                            lb_displayDescription.value = '';
+
+                            txa_datajson.innerHTML = '';
+
+
+                            lb_id.innerHTML = result.data.value[0].id;
+                            lb_type.value = result.data.value[0].type;
+                            lb_name.value = result.data.value[0].name.value;
+                            lb_displayDescription.value = result.data.value[0].displayDescription;
+
+                            tableMetric.innerHTML = '<tr><th><label>TimeStamp</label></th><th><label>Average</label></th>';
+                            for (var i = 0; i < result.data.value[0].timeseries[0].data.length; i++) {
+                                tableMetric.innerHTML += '<tr><td>' + result.data.value[0].timeseries[0].data[i].timeStamp + '</td><td>' + result.data.value[0].timeseries[0].data[i].average +'</td></tr>';
+                            }
+                            txa_datajson.value = result.datajsonFormatted;
+                            divMetrics.style.display = 'block';
+                        }
+               });
+        }
+    })
+
+
+    </script>
+}
+else
+{
+    <h1>Antes debes iniciar sesión!!!</h1>
+}

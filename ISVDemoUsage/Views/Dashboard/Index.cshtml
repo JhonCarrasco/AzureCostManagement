@@ -1,224 +1,1214 @@
-﻿@model ISVDemoUsage.Forms.SubscriptionForm
-@{
-    ViewBag.Title = "Index";
-}
+﻿
+<!DOCTYPE html>
+<html>
 
-<h2>Index</h2>
+<head>
+    <meta charset="utf-8" />
+    <title>Admin Panel</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- C3 charts css -->
+    <link href="assets/css/charts.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Table Responsive css -->
+    <link href="assets/css/table.min.css" rel="stylesheet" type="text/css" media="screen">
+
+    <!-- DataTables -->
+    <link href="assets/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+    <!-- Sweet Alert -->
+    <link href="assets/css/sweetalert2.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Custom box css -->
+    <link href="assets/css/custombox.min.css" rel="stylesheet">
+
+    <!-- Toastr css -->
+    <link href="assets/css/jquery.toast.min.css" rel="stylesheet" />
+
+    <!-- Spinkit css -->
+    <link href="assets/css/spinkit.css" rel="stylesheet" />
+
+    <!-- Tooltipster css -->
+    <link rel="stylesheet" href="assets/css/tooltipster.bundle.min.css">
+    <!-- Nestable css -->
+    <link href="assets/css/jquery.nestable.css" rel="stylesheet" />
+    <!-- Lightbox css -->
+    <link href="assets/css/lightbox.min.css" rel="stylesheet" />
+
+    <!-- ION Slider -->
+    <link href="assets/css/ion.rangeSlider.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/ion.rangeSlider.skinModern.css" rel="stylesheet" type="text/css" />
+
+    <!-- Slick Slider css -->
+    <link href="assets/css/slick.css" rel="stylesheet" />
+    <link href="assets/css/slick-theme.css" rel="stylesheet" />
+
+
+    <!--calendar css-->
+    <link href="assets/css/fullcalendar.min.css" rel="stylesheet" />
+    <!-- C3 charts css -->
+    <link href="assets/css/c3.min.css" rel="stylesheet" type="text/css" />
+    <!--chartist Chart CSS -->
+    <link rel="stylesheet" href="assets/css/chartist.min.css">
+    <!--Morris Chart CSS -->
+    <link rel="stylesheet" href="assets/css/morris.css">
+    <!-- Summernote css -->
+    <link href="assets/css/summernote-bs4.css" rel="stylesheet" />
+    <!-- Modal -->
+    <link href="assets/css/custombox.min.css" rel="stylesheet">
+
+    <!-- Plugins css-->
+    <link href="assets/css/bootstrap-tagsinput.css" rel="stylesheet" />
+    <link href="assets/css/jquery-ui.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link href="assets/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/switchery.min.css">
+
+    <!-- Plugins css-form-picker -->
+    <link href="assets/css/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-colorpicker.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-datepicker.min.css" rel="stylesheet">
+    <link href="assets/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+    <link href="assets/css/daterangepicker.css" rel="stylesheet">
+    <!-- X editable -->
+    <link href="assets/css/bootstrap-editable.css" rel="stylesheet" />
+    <!-- Jquery filer css -->
+    <link href="assets/css/jquery.filer.css" rel="stylesheet" />
+    <link href="assets/css/jquery.filer-dragdropbox-theme.css" rel="stylesheet" />
+
+    <!-- Bootstrap fileupload css -->
+    <link href="assets/css/bootstrap-fileupload.css" rel="stylesheet" />
 
 
 
-<div class="container">
-    <div class="form-group">
-        <div class="col-md-7">
-            @Html.DropDownListFor(m => m.SubscriptionId, Model.subscriptionControl.Listado, "Subscripción...", new { @class = "form-control", @Style = "text-align:left", @id = "cbSubscription" })
+    <!-- App css -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/icons.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/metismenu.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- green -->
+    <link href="assets/css/style-green.css" rel="stylesheet" type="text/css" />
+
+    <!-- red -->
+    <!-- <link href="assets/css/style-red.css" rel="stylesheet" type="text/css" /> -->
+    <!-- blue -->
+    <!-- <link href="assets/css/style-blue.css" rel="stylesheet" type="text/css" /> -->
+    <!-- orange -->
+    <!-- <link href="assets/css/style-orange.css" rel="stylesheet" type="text/css" /> -->
+    <!-- pink -->
+    <!-- <link href="assets/css/style-pink.css" rel="stylesheet" type="text/css" /> -->
+
+    <script src="assets/js/modernizr.min.js"></script>
+
+</head>
+
+
+<body>
+
+    <!-- Begin page -->
+    <div id="wrapper">
+
+        <!-- Top Bar Start -->
+        <!--<div class="topbar">-->
+
+            <!-- LOGO -->
+            <!--<div class="topbar-left">
+                <a href="index.php" class="logo">
+                    <span>
+                        <h2>Admin Panel</h2>
+                    </span>
+                    <i>
+                        <img src="assets/images/logo_sm.png" alt="" height="28">
+                    </i>
+                </a>
+            </div>
+
+            <nav class="navbar-custom">
+
+                <ul class="list-inline float-right mb-0">
+                    <li class="list-inline-item dropdown notification-list">
+                        <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false">
+                            <i class="dripicons-bell noti-icon"></i>
+                            <span class="badge badge-pink noti-icon-badge">4</span>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg" aria-labelledby="Preview">-->
+                            <!-- item-->
+                            <!--<div class="dropdown-item noti-title">
+                                <h5><span class="badge badge-danger float-right">5</span>Notification</h5>
+                            </div>-->
+
+                            <!-- item-->
+                            <!--<a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-success"><i class="icon-bubble"></i></div>
+                                <p class="notify-details">Robert S. Taylor commented on Admin<small class="text-muted">1 min ago</small></p>
+                            </a>-->
+
+                            <!-- item-->
+                            <!--<a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-info"><i class="icon-user"></i></div>
+                                <p class="notify-details">New user registered.<small class="text-muted">1 min ago</small></p>
+                            </a>-->
+
+                            <!-- item-->
+                            <!--<a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <div class="notify-icon bg-danger"><i class="icon-like"></i></div>
+                                <p class="notify-details">Carlos Crouch liked <b>Admin</b><small class="text-muted">1 min ago</small></p>
+                            </a>-->
+
+                            <!-- All-->
+                            <!--<a href="javascript:void(0);" class="dropdown-item notify-item notify-all">
+                                View All
+                            </a>
+
+                        </div>
+                    </li>
+
+                    <li class="list-inline-item dropdown notification-list">
+                        <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
+                           aria-haspopup="false" aria-expanded="false">
+                            <img src="assets/images/users/avatar-1.jpg" alt="user" class="rounded-circle">
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">-->
+                            <!-- item-->
+                            <!--<div class="dropdown-item noti-title">
+                                <h5 class="text-overflow"><small>Welcome ! John</small> </h5>
+                            </div>-->
+
+                            <!-- item-->
+                            <!--<a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="mdi mdi-account-circle"></i> <span>Profile</span>
+                            </a>-->
+
+                            <!-- item-->
+                            <!--<a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="mdi mdi-settings"></i> <span>Settings</span>
+                            </a>-->
+
+                            <!-- item-->
+                            <!--<a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="mdi mdi-lock-open"></i> <span>Lock Screen</span>
+                            </a>-->
+
+                            <!-- item-->
+                            <!--<a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="mdi mdi-power"></i> <span>Logout</span>
+                            </a>
+
+                        </div>
+                    </li>
+
+                </ul>
+
+                <ul class="list-inline menu-left mb-0">
+                    <li class="float-left">
+                        <button class="button-menu-mobile open-left waves-light waves-effect">
+                            <i class="dripicons-menu"></i>
+                        </button>
+                    </li>
+                    <li class="hide-phone app-search">
+                        <form role="search" class="">
+                            <input type="text" placeholder="Search..." class="form-control">
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </form>
+                    </li>
+                </ul>
+
+            </nav>
+
+        </div>-->
+        <!-- Top Bar End -->
+
+        @*<div class="left side-menu">
+            <div class="slimscroll-menu" id="remove-scroll">
+                <div id="sidebar-menu">
+                    <ul class="metismenu" id="side-menu">
+                        <li class="menu-title">Navigation</li>
+                        <li>
+                            <a href="index.php">
+                                <i class="fi-air-play"></i><span class="badge badge-success pull-right"></span> <span> Dashboard </span>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);"><i class="fi-target"></i> <span> Admin UI </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+
+                                <li><a href="admin-sweet-alert.php">Sweet Alert</a></li>
+                                <li><a href="admin-tiles.php">Tiles Box</a></li>
+                                <li><a href="admin-nestable.php">Nestable List</a></li>
+
+                                <li><a href="admin-ratings.php">Ratings</a></li>
+                                <li><a href="admin-filemanager.php">File Manager</a></li>
+                                <li><a href="admin-lightbox.php">Lightbox</a></li>
+                                <li><a href="admin-scrollbar.php">Scroll bar</a></li>
+                                <li><a href="admin-slider.php">Slider</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fi-briefcase"></i> <span> UI Kit </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="ui-typography.php">Typography</a></li>
+                                <li><a href="ui-cards.php">Cards</a></li>
+                                <li><a href="ui-buttons.php">Buttons</a></li>
+                                <li><a href="ui-modals.php">Modals</a></li>
+                                <li><a href="ui-checkbox-radio.php">Checkboxs-Radios</a></li>
+                                <li><a href="ui-spinners.php">Spinners</a></li>
+                                <li><a href="ui-ribbons.php">Ribbons</a></li>
+                                <li><a href="ui-tabs.php">Tabs</a></li>
+                                <li><a href="ui-progressbars.php">Progress Bars</a></li>
+                                <li><a href="ui-notifications.php">Notification</a></li>
+                                <li><a href="ui-carousel.php">Carousel</a>
+                                <li><a href="ui-video.php">Video</a>
+                                <li><a href="ui-tooltips-popovers.php">Tooltips & Popovers</a></li>
+                                <li><a href="ui-images.php">Images</a></li>
+                                <li><a href="ui-bootstrap.php">Bootstrap UI</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="tickets.php"><i class="fi-help"></i><span class="badge badge-danger pull-right">New</span> <span> Tickets </span></a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fi-box"></i><span> Icons </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="icons-colored.php">Colored Icons</a></li>
+                                <li><a href="icons-materialdesign.php">Material Design</a></li>
+                                <li><a href="icons-dripicons.php">Dripicons</a></li>
+                                <li><a href="icons-fontawesome.php">Font awesome</a></li>
+                                <li><a href="icons-feather.php">Feather Icons</a></li>
+                                <li><a href="icons-simple-line.php">Simple line Icons</a></li>
+                                <li><a href="icons-flags.php">Flag Icons</a></li>
+                                <li><a href="icons-file.php">File Icons</a></li>
+                                <li><a href="icons-pe7.php">PE7 Icons</a></li>
+                                <li><a href="icons-typicons.php">Typicons</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fi-bar-graph-2"></i><span> Graphs </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="chart-flot.php">Flot Chart</a></li>
+                                <li><a href="chart-morris.php">Morris Chart</a></li>
+                                <li><a href="chart-google.php">Google Chart</a></li>
+                                <li><a href="chart-echart.php">Echarts</a></li>
+                                <li><a href="chart-chartist.php">Chartist Charts</a></li>
+                                <li><a href="chart-chartjs.php">Chartjs Chart</a></li>
+                                <li><a href="chart-c3.php">C3 Chart</a></li>
+                                <li><a href="chart-justgage.php">Justgage Charts</a></li>
+                                <li><a href="chart-sparkline.php">Sparkline Chart</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fi-mail"></i><span> Email </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="email-inbox.php">Inbox</a></li>
+                                <li><a href="email-read.php">Read Email</a></li>
+                                <li><a href="email-compose.php">Compose Email</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="taskboard.php"><i class="fi-paper"></i> <span> Task Board </span></a>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fi-disc"></i><span class="badge badge-warning pull-right">12</span> <span> Forms </span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="form-elements.php">Form Elements</a></li>
+                                <li><a href="form-advanced.php">Form Advanced</a></li>
+                                <li><a href="form-layouts.php">Form Layouts</a></li>
+                                <li><a href="form-validation.php">Form Validation</a></li>
+                                <li><a href="form-pickers.php">Form Pickers</a></li>
+                                <li><a href="form-wizard.php">Form Wizard</a></li>
+                                <li><a href="form-mask.php">Form Masks</a></li>
+                                <li><a href="form-summernote.php">Summernote</a></li>
+                                <li><a href="form-wysiwig.php">Wysiwig Editors</a></li>
+                                <li><a href="form-typeahead.php">Typeahead</a></li>
+                                <li><a href="form-x-editable.php">X Editable</a></li>
+                                <li><a href="form-uploads.php">Multiple File Upload</a></li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fi-layout"></i> <span> Tables </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="tables-basic.php">Basic Tables</a></li>
+                                <li><a href="tables-layouts.php">Tables Layouts</a></li>
+                                <li><a href="tables-datatable.php">Data Tables</a></li>
+                                <li><a href="tables-foo-tables.php">Foo Tables</a></li>
+                                <li><a href="tables-responsive.php">Responsive Table</a></li>
+
+                                <li><a href="tables-editable.php">Editable Tables</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="menu-title">More</li>
+
+
+                        <li><a href="calendar.php"><i class="fi-clock"></i> <span>Calendar</span> </a></li>
+
+                        <li>
+                            <a href="javascript: void(0);"><i class="fi-paper-stack"></i><span> Pages </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="page-starter.php">Starter Page</a></li>
+                                <li><a href="page-login.php">Login</a></li>
+                                <li><a href="page-register.php">Register</a></li>
+                                <li><a href="page-logout.php">Logout</a></li>
+                                <li><a href="page-recoverpw.php">Recover Password</a></li>
+                                <li><a href="page-lock-screen.php">Lock Screen</a></li>
+                                <li><a href="page-confirm-mail.php">Confirm Mail</a></li>
+                                <li><a href="page-404.php">Error 404</a></li>
+                                <li><a href="page-404-alt.php">Error 404-alt</a></li>
+                                <li><a href="page-500.php">Error 500</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="has_sub">
+                            <a href="javascript:void(0);"><i class="fi-marquee-plus"></i><span> Extra Pages </span> <span class="menu-arrow"></span></a>
+                            <ul class="nav-second-level" aria-expanded="false">
+                                <li><a href="extras-about.php">About Us</a></li>
+                                <li><a href="extras-contact.php">Contact</a></li>
+                                <li><a href="extras-companies.php">Companies</a></li>
+                                <li><a href="extras-members.php">Members</a></li>
+                                <li><a href="extras-members-2.php">Membars 2</a></li>
+                                <li><a href="extras-timeline.php">Timeline</a></li>
+                                <li><a href="extras-invoice.php">Invoice</a></li>
+                                <li><a href="extras-maintenance.php">Maintenance</a></li>
+                                <li><a href="extras-coming-soon.php">Coming Soon</a></li>
+                                <li><a href="extras-faq.php">FAQ</a></li>
+                                <li><a href="extras-pricing.php">Pricing</a></li>
+                                <li><a href="extras-profile.php">Profile</a></li>
+                                <li><a href="extras-email-template.php">Email Templates</a></li>
+                                <li><a href="extras-search-result.php">Search Results</a></li>
+                                <li><a href="extras-sitemap.php">Site Map</a></li>
+                            </ul>
+                        </li>
+
+
+                    </ul>
+
+                </div>
+
+                <div class="clearfix"></div>
+
+            </div>
+
+        </div>*@
+
+
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+
+                    @*<div class="row">
+                        <div class="col-12">
+                            <div class="page-title-box">
+                                <h4 class="page-title float-left">Basic Inputs</h4>
+
+                                <ol class="breadcrumb float-right">
+                                    <li class="breadcrumb-item"><a href="#">Adminox</a></li>
+                                    <li class="breadcrumb-item"><a href="#">Forms</a></li>
+                                    <li class="breadcrumb-item active">Basic Inputs</li>
+                                </ol>
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>*@
+                    <!-- end row -->
+
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-box">
+                                <h4 class="m-t-0 header-title">Input Types</h4>
+                                <p class="text-muted m-b-30 font-14">
+                                    Most common form control, text-based input fields. Includes support for all HTML5 types: <code>text</code>, <code>password</code>, <code>datetime</code>, <code>datetime-local</code>, <code>date</code>, <code>month</code>, <code>time</code>, <code>week</code>, <code>number</code>, <code>email</code>, <code>url</code>, <code>search</code>, <code>tel</code>, and <code>color</code>.
+                                </p>
+
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="p-20">
+                                            <form class="form-horizontal" role="form">
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Text</label>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" value="Some text value...">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label" for="example-email">Email</label>
+                                                    <div class="col-10">
+                                                        <input type="email" id="example-email" name="example-email" class="form-control" placeholder="Email">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Password</label>
+                                                    <div class="col-10">
+                                                        <input type="password" class="form-control" value="password">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Placeholder</label>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" placeholder="placeholder">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Text area</label>
+                                                    <div class="col-10">
+                                                        <textarea class="form-control" rows="5"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Readonly</label>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" readonly="" value="Readonly value">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Disabled</label>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" disabled="" value="Disabled value">
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Static control</label>
+                                                    <div class="col-10">
+                                                        <p class="form-control-static">email@example.com</p>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Helping text</label>
+                                                    <div class="col-10">
+                                                        <input type="text" class="form-control" placeholder="Helping text">
+                                                        <span class="help-block"><small>A block of help text that breaks onto a new line and may extend beyond one line.</small></span>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Input Select</label>
+                                                    <div class="col-10">
+                                                        <select class="form-control">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                        <h6>Multiple select</h6>
+                                                        <select multiple class="form-control">
+                                                            <option>1</option>
+                                                            <option>2</option>
+                                                            <option>3</option>
+                                                            <option>4</option>
+                                                            <option>5</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Default file input</label>
+                                                    <div class="col-10">
+                                                        <input type="file" class="form-control">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Date</label>
+                                                    <div class="col-10">
+                                                        <input class="form-control" type="date" name="date">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Month</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="month" name="month">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Time</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="time" name="time">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Week</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="week" name="week">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Number</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="number" name="number">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">URL</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="url" name="url">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Search</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="search" name="search">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Tel</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="tel" name="tel">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Color</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="color" name="color">
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                    <label class="col-2 col-form-label">Range</label>
+                                                    <div class="col-md-10">
+                                                        <input class="form-control" type="range" name="range" min="0" max="10">
+                                                    </div>
+                                                </div>
+
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- end row -->
+
+                            </div> <!-- end card-box -->
+                        </div><!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-box">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h4 class="m-t-0 header-title">Select menu</h4>
+                                        <p class="text-muted m-b-30 font-14">
+                                            Custom <code class="highlighter-rouge">&lt;select&gt;</code> menus need only a custom class, <code class="highlighter-rouge">.custom-select</code> to trigger the custom styles.
+                                        </p>
+
+                                        <select class="custom-select mt-3">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <h4 class="header-title">Checkboxes and radios</h4>
+                                        <div class="mt-3">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                                            </div>
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                <label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
+                                            </div>
+                                        </div>
+                                        <div class="mt-3">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                                <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div> <!-- end card-box -->
+                        </div> <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card-box">
+                                <h4 class="m-t-0 header-title">Input Sizes & Group</h4>
+                                <p class="text-muted m-b-30 font-14">
+                                    Set heights using classes like <code>.input-lg</code>, and set widths using grid column classes like <code>.col-lg-*</code>.
+                                </p>
+
+                                <div class="p-20">
+                                    <form role="form" class="form-horizontal">
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label" for="example-input-small">Small</label>
+                                            <div class="col-10">
+                                                <input type="text" id="example-input-small" name="example-input-small" class="form-control form-control-sm" placeholder=".input-sm">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label" for="example-input-normal">Normal</label>
+                                            <div class="col-10">
+                                                <input type="text" id="example-input-normal" name="example-input-normal" class="form-control" placeholder="Normal">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label" for="example-input-large">Large</label>
+                                            <div class="col-10">
+                                                <input type="text" id="example-input-large" name="example-input-large" class="form-control form-control-lg" placeholder=".input-lg">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label">Grid Sizes</label>
+                                            <div class="col-10">
+                                                <input type="text" class="form-control" placeholder=".col-sm-4">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label">Static</label>
+                                            <div class="col-10">
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text" id="basic-addon1">@@</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label">Dropdowns</label>
+                                            <div class="col-10">
+                                                <div class="input-group mb-3">
+                                                    <div class="input-group-prepend">
+                                                        <button class="btn btn-primary waves-effect waves-light dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+                                                        <div class="dropdown-menu">
+                                                            <a class="dropdown-item" href="#">Action</a>
+                                                            <a class="dropdown-item" href="#">Another action</a>
+                                                            <a class="dropdown-item" href="#">Something else here</a>
+                                                            <div role="separator" class="dropdown-divider"></div>
+                                                            <a class="dropdown-item" href="#">Separated link</a>
+                                                        </div>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="basic-addon1">
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row">
+                                            <label class="col-2 col-form-label">Buttons</label>
+                                            <div class="col-10">
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                                                    <div class="input-group-append">
+                                                        <button class="btn btn-dark waves-effect waves-light" type="button">Button</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </form>
+                                </div>
+                            </div> <!-- end card-box -->
+                        </div> <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card-box">
+                                <h4 class="m-t-0 m-b-30 header-title">Basic Example</h4>
+
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Email address</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputPassword1">Password</label>
+                                        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="checkbox">
+                                            <input id="checkbox0" type="checkbox">
+                                            <label for="checkbox0">
+                                                Check me out
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </form>
+                            </div>
+                        </div>
+                        <!-- end col -->
+
+                        <div class="col-md-6">
+                            <div class="card-box">
+                                <h4 class="m-t-0 m-b-30 header-title">Horizontal form</h4>
+
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-group row">
+                                        <label for="inputEmail3" class="col-3 col-form-label">Email</label>
+                                        <div class="col-9">
+                                            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword3" class="col-3 col-form-label">Password</label>
+                                        <div class="col-9">
+                                            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputPassword5" class="col-3 col-form-label">Re Password</label>
+                                        <div class="col-9">
+                                            <input type="password" class="form-control" id="inputPassword5" placeholder="Retype Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row justify-content-end">
+                                        <div class=" col-9">
+                                            <div class="checkbox checkbox-primary">
+                                                <input id="checkbox2" type="checkbox">
+                                                <label for="checkbox2">
+                                                    Check me out !
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-0 justify-content-end row">
+                                        <div class="col-9">
+                                            <button type="submit" class="btn btn-info waves-effect waves-light">Sign in</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- end row -->
+                    <!-- Inline Form -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card-box">
+                                <h4 class="m-t-0 header-title">Inline Form</h4>
+                                <p class="text-muted m-b-30 font-13">
+                                    Add <code>.form-inline</code> to your form (which doesn't have to be a <code>&lt;form&gt;</code>)
+                                    for left-aligned and inline-block controls. <strong>
+                                        This only applies to forms within viewports
+                                        that are at least 768px wide.
+                                    </strong>
+                                </p>
+                                <div class="row m-b-30">
+                                    <div class="col-sm-12">
+                                        <form class="form-inline">
+                                            <div class="form-group">
+                                                <label for="staticEmail2" class="sr-only">Email</label>
+                                                <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="email@example.com">
+                                            </div>
+                                            <div class="form-group mx-sm-3">
+                                                <label for="inputPassword2" class="sr-only">Password</label>
+                                                <input type="password" class="form-control" id="inputPassword2" placeholder="Password">
+                                            </div>
+                                            <button type="submit" class="btn btn-primary">Confirm identity</button>
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="col-sm-12">
+                                        <h6 class="font-13 mt-4">Auto-sizing</h6>
+
+                                        <form>
+                                            <div class="form-row align-items-center">
+                                                <div class="col-auto">
+                                                    <label class="sr-only" for="inlineFormInput">Name</label>
+                                                    <input type="text" class="form-control mb-2" id="inlineFormInput" placeholder="Jane Doe">
+                                                </div>
+                                                <div class="col-auto">
+                                                    <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                                    <div class="input-group mb-2">
+                                                        <div class="input-group-prepend">
+                                                            <div class="input-group-text">@@</div>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div class="form-check mb-2">
+                                                        <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                                                        <label class="form-check-label" for="autoSizingCheck">
+                                                            Remember me
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button type="submit" class="btn btn-primary mb-2">Submit</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+                    <!-- Form row -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card-box">
+                                <h4 class="m-t-0 header-title">Form row</h4>
+                                <p class="text-muted m-b-30 font-13">
+                                    You may also swap <code class="highlighter-rouge">.row</code> for <code class="highlighter-rouge">.form-row</code>, a variation of our standard grid row that overrides the default column gutters for tighter and more compact layouts.
+                                </p>
+
+                                <form>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputEmail4" class="col-form-label">Email</label>
+                                            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="inputPassword4" class="col-form-label">Password</label>
+                                            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAddress" class="col-form-label">Address</label>
+                                        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="inputAddress2" class="col-form-label">Address 2</label>
+                                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label for="inputCity" class="col-form-label">City</label>
+                                            <input type="text" class="form-control" id="inputCity">
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label for="inputState" class="col-form-label">State</label>
+                                            <select id="inputState" class="form-control">Choose</select>
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            <label for="inputZip" class="col-form-label">Zip</label>
+                                            <input type="text" class="form-control" id="inputZip">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input class="form-check-input" type="checkbox"> Check me out
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Sign in</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end row -->
+
+
+                </div> <!-- container -->
+
+            </div> <!-- content -->
+
+
+            @*<footer class="footer text-right">
+                <span>Designed And Developed by <a href="https://toxsl.com/" class="footer_link">ToXSL TECHNOLOGIES PVT.LTD</a></span>.
+            </footer>*@
+
         </div>
-        <div class="col-md-offset-5">
 
+
+    </div>
+
+    <!-- Modal -->
+    <div id="custom-modal" class="modal-demo">
+        <button type="button" class="close" onclick="Custombox.close();">
+            <span>&times;</span><span class="sr-only">Close</span>
+        </button>
+        <h4 class="custom-modal-title">Modal title</h4>
+        <div class="custom-modal-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
         </div>
     </div>
-    <br />
-    <div class="form-group">
-        <div class="col-md-7">
-            @Html.DropDownListFor(m => m.ResourceGroupId, Model.ListadoResourceGroup, "Grupos de recursos...", new { @class = "form-control", @Style = "text-align:left", @id = "cbResourceGroup" })
-        </div>
-        <div class="col-md-offset-5">
-
-        </div>
-    </div>
-    <br />
-    <div class="form-group">
-        <div class="col-md-7">
-            @Html.DropDownListFor(m => m.ResourceId, Model.ListadoResource, "Recursos...", new { @class = "form-control", @Style = "text-align:left", @id = "cbResource" })
-        </div>
-        <div class="col-md-offset-5">
-            
-        </div>
-    </div>
-    <br />
-    <div class="form-group">
-        <div class="col-md-7">
-            @Html.DropDownListFor(m => m.DefinitionId, Model.ListadoDefinitions, "Definiciones de métricas...", new { @class = "form-control", @Style = "text-align:left", @id = "cbMetricDefinition" })
-        </div>
-        <div class="col-md-offset-5">
-
-        </div>
-    </div>
-    <div class="form-group">
-        <input type="button" class="btn btn-primary" value="Metric" id="btnMetric" />
-    </div>
 
 
-    <hr />
-    <div class="container" id="divMetrics" hidden>
-        <div class="form-group">
-            <label class="col-md-2">Id</label>
-            <label class="col-md-10" id="lb_id"></label>
-        </div>
-        <div class="form-group">
-            <label class="col-md-2">Type</label>
-            <label class="col-md-10" id="lb_type"></label>
-        </div>
-        <div class="form-group">
-            <label class="col-md-2">Name</label>
-            <label class="col-md-10" id="lb_name"></label>
-        </div>
-        <div class="form-group">
-            <label class="col-md-2">Display Description</label>
-            <label class="col-md-10" id="lb_displayDescription"></label>
-        </div>
-
-        <table class="table" id="tableMetric">
-        </table>
-
-    </div>
+    <!-- jQuery  -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script><!-- Popper for Bootstrap -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/metisMenu.min.js"></script>
+    <script src="assets/js/waves.js"></script>
+    <script src="assets/js/jquery.slimscroll.js"></script>
 
 
 
-    <script>
-    const cbSubscription = document.querySelector("#cbSubscription");
-    const cbResourceGroup = document.querySelector("#cbResourceGroup");
-    const cbResource = document.querySelector("#cbResource");
-    const cbMetricDefinition = document.querySelector('#cbMetricDefinition');
-    const btnBuscar = document.querySelector("#btnMetric");
+    <script src="assets/js/jquery.dataTables.min.js"></script>
+    <script src="assets/js/dataTables.bootstrap4.min.js"></script>
+    <script src="assets/js/dataTables.responsive.min.js"></script>
 
-    const divMetrics = document.querySelector('#divMetrics');
-    const tableMetric = document.querySelector("#tableMetric");
-    const lb_id = document.querySelector("#lb_id");
-        const lb_type = document.querySelector("#lb_type");
-        const lb_name = document.querySelector("#lb_name");
-    const lb_displayDescription = document.querySelector("#lb_displayDescription");
+    <!-- Bootstrap tagsinput -->
+    <script src="assets/js/bootstrap-tagsinput.min.js"></script>
+    <!-- Jquery Ui js -->
+    <script src="assets/js/jquery-ui.min.js"></script>
 
-    cbSubscription.addEventListener('change', () => {
-        const subscriptionId = cbSubscription.value;
-        const organizationId = getOrganization();
-        if (!(subscriptionId === '')) {
-            $.get('@Url.Action("GetResourceGroupList")', { subscriptionId: subscriptionId, organizationId: organizationId},
-                function (result) {
-                    if (result.success)
-                        if (result.data != null) {
-                            cbResourceGroup.innerHTML = '';
-                            cbResource.innerHTML = '';
-                            let first = document.createElement('option');
-                            first.text = 'Grupos de recursos...';
-                            cbResourceGroup.add(first);
-                            let second = document.createElement('option');
-                            second.text = 'Recursos...';
-                            cbResource.add(second);
-                            for (let i = 0; i < result.data.length; i++) {
-                                let option = document.createElement('option');
-                                option.text = result.data[i].Name;
-                                option.value = result.data[i].Id;
-                                cbResourceGroup.add(option);
-                            }
-                        }
-                    //window.location.href = "/BlackList/Create";
-               });
-        }
-    });
 
-    cbResourceGroup.addEventListener('change', () => {
-        const subscriptionId = cbSubscription.value;
-        const organizationId = getOrganization();
-        const resourceGroupId = cbResourceGroup.value;
-        const resourceGroup = cbResourceGroup.options[cbResourceGroup.selectedIndex].text;
-        if (!(resourceGroupId === '')) {
-            $.get('@Url.Action("GetResourceList")', { subscriptionId: subscriptionId, organizationId: organizationId, resourceGroup: resourceGroup},
-                function (result) {
-                    if (result.success)
-                        if (result.data != null) {
-                            cbResource.innerHTML = '';
-                            let first = document.createElement('option');
-                            first.text = 'Recursos...';
-                            cbResource.add(first);
-                            for (let i = 0; i < result.data.length; i++) {
-                                let option = document.createElement('option');
-                                option.text = result.data[i].Name;
-                                option.value = result.data[i].Id;
-                                cbResource.add(option);
-                            }
-                        }
-               });
-        }
-    });
+    <!-- Plugins -->
+    <script src="assets/js/sweetalert2.min.js"></script>
+    <script src="assets/js/moment.js"></script>
+    <script src="assets/pages/jquery.todo.js"></script>
 
-    cbResource.addEventListener('change', () => {
+    <!-- Sweet-Alert  -->
+    <script src="assets/pages/jquery.sweet-alert.init.js"></script>
 
-        tableMetric.innerHTML = '';
-        divMetrics.style.display = 'none';
-        cbMetricDefinition.innerHTML = '';
+    <!-- Modal-Effect -->
+    <script src="assets/js/custombox.min.js"></script>
+    <script src="assets/js/legacy.min.js"></script>
 
-        const organizationId = getOrganization();
-        const resourceUri = cbResource.value
+    <!-- Toastr js -->
+    <script src="assets/js/jquery.toast.min.js" type="text/javascript"></script>
+    <script src="assets/pages/jquery.toastr.js" type="text/javascript"></script>
+    <!-- Tooltipster js -->
+    <script src="assets/js/tooltipster.bundle.min.js"></script>
+    <script src="assets/pages/jquery.tooltipster.js"></script>
 
-        if (!(resourceUri === '')) {
-            $.get('@Url.Action("GetMetricDefinitions")', { organizationId: organizationId, resourceUri: resourceUri },
-                function (result) {
-                    if (result.success)
-                        if (result.data != null) {
-                            let first = document.createElement('option');
-                            first.text = 'Definiciones de métricas...';
-                            cbMetricDefinition.add(first);
-                            for (let i = 0; i < result.data.length; i++) {
-                                let option = document.createElement('option');
-                                option.text = result.data[i].name.localizedValue;
-                                option.value = result.data[i].id;
-                                cbMetricDefinition.add(option);
-                            }
-                        }
-               });
-        }
+    <!-- Light Box js -->
+    <script src="assets/js/lightbox.min.js" type="text/javascript"></script>
 
-    });
+    <!--script for this admin-nestable only-->
+    <script src="assets/js/jquery.nestable.js"></script>
+    <script src="assets/pages/jquery.nestable.init.js"></script>
 
-    cbMetricDefinition.addEventListener('change', () => {
-        const id = cbMetricDefinition.value;
-        const metricName = cbMetricDefinition.options[cbMetricDefinition.selectedIndex].text;
-        console.log('id: ' + id);
-        console.log('metricName: ' + metricName);
-    });
+    <!-- Slick Slider js -->
+    <script src="assets/js/slick.min.js" type="text/javascript"></script>
+    <script src="assets/pages/jquery.slider.init.js"></script>
+
+
+    <!-- init -->
+    <script src="assets/pages/jquery.scrollbar.js" type="text/javascript"></script>
+
+    <!-- Rating js -->
+    <script src="assets/js/jquery.raty-fa.js"></script>
+    <!-- page init -->
+    <script src="assets/pages/jquery.rating.js"></script>
+    <!-- Counter js  -->
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/jquery.waypoints.min.js"></script>
+
+    <!-- Tree view js -->
+    <!-- SCRIPTS -->
+    <script src="assets/js/moment.js"></script>
+    <script src='assets/js/fullcalendar.min.js'></script>
+    <script src="assets/pages/jquery.calendar.js"></script>
+    <!-- Flot chart -->
+    <script src="assets/js/jquery.flot.min.js"></script>
+    <script src="assets/js/jquery.flot.time.js"></script>
+    <script src="assets/js/jquery.flot.tooltip.min.js"></script>
+    <script src="assets/js/jquery.flot.resize.js"></script>
+    <script src="assets/js/jquery.flot.pie.js"></script>
+    <script src="assets/js/jquery.flot.selection.js"></script>
+    <script src="assets/js/jquery.flot.stack.js"></script>
+    <script src="assets/js/jquery.flot.orderBars.min.js"></script>
+    <script src="assets/js/jquery.flot.crosshair.js"></script>
+    <script src="assets/js/curvedLines.js"></script>
+    <script src="assets/js/jquery.flot.axislabels.js"></script>
+    <script src="assets/pages/jquery.flot.init.js"></script>
+
+
+    <!--C3 Chart-->
+    <script type="text/javascript" src="assets/js/d3.min.js"></script>
+    <script type="text/javascript" src="assets/js/c3.min.js"></script>
+    <script src="assets/pages/jquery.c3-chart.init.js"></script>
+    <!-- Chart JS -->
+    <script src="assets/js/chart.min.js"></script>
+    <script src="assets/pages/jquery.chartjs.init.js"></script>
+    <!--Chartist Chart-->
+    <script src="assets/js/chartist.min.js"></script>
+    <script src="assets/js/chartist-plugin-tooltip.min.js"></script>
+    <script src="assets/pages/jquery.chartist.init.js"></script>
+    <!-- Google Charts js -->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+    <!-- justGage JS -->
+    <script src="assets/js/raphael-min.js"></script>
+    <script src="assets/js/justgage.js"></script>
+    <script src="assets/pages/jquery.justgage.init.js"></script>
+
+    <!--Morris Chart-->
+    <script src="assets/js/morris.min.js"></script>
+    <script src="assets/js/raphael2-min.js"></script>
+    <script src="assets/pages/jquery.morris.init.js"></script>
+    <!-- Sparkline charts -->
+    <script src="assets/js/jquery.sparkline.min.js"></script>
+    <script src="assets/pages/jquery.charts-sparkline.js"></script>
+
+    <script src="assets/pages/jquery.companies.js"></script>
 
 
 
-    const getOrganization = () => {
-        let org = '';
-        if ('@Model.subscriptionControl._listado' != null) {
-            org = '@Model.subscriptionControl._listado[0].OrganizationId';
-        }
-        return org;
-    }
+    <script src="assets/js/switchery.min.js"></script>
+    <script src="assets/js/bootstrap-tagsinput2.min.js"></script>
+    <script src="assets/js/select2.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap-select.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap-filestyle.min.js" type="text/javascript"></script>
+    <script src="assets/js/jquery.bootstrap-touchspin.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap-maxlength.min.js" type="text/javascript"></script>
 
-    btnBuscar.addEventListener('click', () => {
-        const organizationId = getOrganization();
-        const resourceUri = cbResource.value;
-        const metricnames = cbMetricDefinition.options[cbMetricDefinition.selectedIndex].text;
-        if (!(organizationId === '' || resourceUri === '')) {
-            console.log(resourceUri);
-            $.get('@Url.Action("GetMetricsResource")', { organizationId: organizationId, resourceUri: resourceUri, metricnames: metricnames},
-                function (result) {
-                    if (result.success)
-                        if (result.data != null) {
-                            tableMetric.innerHTML = '';
-                            divMetrics.style.display = 'none';
-                            lb_id.innerHTML = '';
-                            lb_type.innerHTML = '';
-                            lb_name.innerHTML = '';
-                            lb_displayDescription.innerHTML = '';
-                            
+    <script type="text/javascript" src="assets/js/jquery.mockjax.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.autocomplete.min.js"></script>
+    <script type="text/javascript" src="assets/js/countries.js"></script>
 
-                            lb_id.innerHTML = result.data.value[0].id;
-                            lb_type.innerHTML = result.data.value[0].type;
-                            lb_name.innerHTML = result.data.value[0].name.value;
-                            lb_displayDescription.innerHTML = result.data.value[0].displayDescription;
+    <!-- form-mask -->
+    <script src="assets/js/bootstrap-inputmask.min.js" type="text/javascript"></script>
+    <script src="assets/js/autoNumeric.js" type="text/javascript"></script>
+    <script type="text/javascript" src="assets/pages/jquery.autocomplete.init.js"></script>
 
-                            tableMetric.innerHTML = '<tr><th><label>TimeStamp</label></th><th><label>Average</label></th>';
-                            for (var i = 0; i < result.data.value[0].timeseries[0].data.length; i++) {
-                                tableMetric.innerHTML += '<tr><td>' + result.data.value[0].timeseries[0].data[i].timeStamp + '</td><td>' + result.data.value[0].timeseries[0].data[i].average +'</td></tr>';
-                            }
-                            divMetrics.style.display = 'block';
-                        }
-               });
-        }
-    })
+    <!-- plugin js form-picker-->
+    <script src="assets/js/moment2.js"></script>
+    <script src="assets/js/bootstrap-timepicker.js"></script>
+    <script src="assets/js/bootstrap-colorpicker.min.js"></script>
+    <script src="assets/js/bootstrap-datepicker.min.js"></script>
+    <script src="assets/js/bootstrap-clockpicker.min.js"></script>
+    <script src="assets/js/daterangepicker.js"></script>
+
+    <!-- Typehead -->
+    <script src="assets/js/handlebars.js" type="text/javascript"></script>
+    <script src="assets/js/typeahead.bundle.min.js" type="text/javascript"></script>
+    <script src="assets/pages/jquery.typehead.init.js" type="text/javascript"></script>
+    <!--Form Wizard-->
+    <script src="assets/js/jquery.stepy.min.js" type="text/javascript"></script>
+    <!--wizard initialization-->
+    <script src="assets/pages/jquery.wizard-init.js" type="text/javascript"></script>
+    <!-- Xeditable -->
 
 
+    <script src="assets/js/moment.js"></script>
+
+
+    <script src="assets/js/bootstrap-editable.min.js" type="text/javascript"></script>
+    <script src="assets/pages/jquery.xeditable.init.js" type="text/javascript"></script>
+    <!-- Jquery filer js -->
+    <script src="assets/js/jquery.filer.min.js"></script>
+
+    <!-- Bootstrap fileupload js -->
+    <script src="assets/js/bootstrap-fileupload.js"></script>
+    <!-- page specific js -->
+    <script src="assets/pages/jquery.fileuploads.init.js"></script>
+
+
+    <!-- Init js -->
+    <script src="assets/pages/jquery.form-pickers.init.js"></script>
+
+
+    <!-- Init Js file -->
+    <script type="text/javascript" src="assets/pages/jquery.form-advanced.init.js"></script>
+
+
+    <!-- Init -->
+    <script type="text/javascript" src="assets/pages/jquery.google-charts.init.js"></script>
+
+    <!-- Dashboard init -->
+    <script src="assets/pages/jquery.dashboard-2.js"></script>
+
+    <!--FooTable-->
+    <script src="assets/js/footable.all.min.js"></script>
+
+    <!--FooTable Example-->
+    <script src="assets/pages/jquery.footable.js"></script>
+
+    <!-- responsive-table-->
+    <script src="assets/js/rwd-table.min.js" type="text/javascript"></script>
+
+
+    <!--C3 Chart-->
+    <script type="text/javascript" src="assets/js/d3.min.js"></script>
+    <script type="text/javascript" src="assets/js/c3.min.js"></script>
+
+    <!--Echart Chart-->
+    <script src="assets/js/echarts-all.js"></script>
+
+    <!-- Dashboard init -->
+    <script src="assets/pages/jquery.dashboard.js"></script>
+
+    <!--Summernote js-->
+    <script src="assets/js/summernote-bs4.min.js"></script>
+
+    <!-- App js -->
+    <script src="assets/js/jquery.core.js"></script>
+    <script src="assets/js/jquery.app.js"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#datatable').dataTable();
+        });
     </script>
+    <script>
+        $(document).ready(function () {
+
+            $("#upcoming, #inprogress, #completed").sortable({
+                connectWith: ".taskList",
+                placeholder: 'task-placeholder',
+                forcePlaceholderSize: true,
+                update: function (event, ui) {
+
+                    var todo = $("#todo").sortable("toArray");
+                    var inprogress = $("#inprogress").sortable("toArray");
+                    var completed = $("#completed").sortable("toArray");
+                }
+            }).disableSelection();
+
+        });
+    </script>
+
+
+</body>
+
+</html> 

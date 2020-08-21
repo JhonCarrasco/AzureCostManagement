@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <parameters>
   <parameter name="DataAccess-Web.config Connection String" description="DataAccess Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:costmetricbilling.database.windows.net,1433;Initial Catalog=costmetricbilling;Persist Security Info=False;User ID=sql_admin;Password=Ignite.2020;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
-    <parameterEntry kind="XmlFile" scope="C:\\ignite\\local\\billing-dotnet-webapp-multitenant\ -\ Copy\\WebApp-Billing-MultiTenant\\ISVDemoUsage\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataAccess']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\jhon\.carrasco\\Documents\\GitHub\\AzureCostManagement\\ISVDemoUsage\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DataAccess']/@connectionString" />
   </parameter>
 </parameters>

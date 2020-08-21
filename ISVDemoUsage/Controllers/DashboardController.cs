@@ -71,7 +71,19 @@ namespace ISVDemoUsage.Controllers
             }
         }
          
-        public JsonResult GetMetricsResource(string organizationId, string resourceUri, string metricnames) 
+        public JsonResult GetMetricsResource(
+            string organizationId,
+            string resourceUri,
+            string metricnames,
+            string timespan,
+            string interval,
+            string aggregation,
+            string top,
+            string orderby,
+            string filter,
+            string resultType,
+            string api_version,
+            string metricnamespace) 
         {
             MetricsResource metricResource = new MetricsResource();
             try
@@ -79,7 +91,19 @@ namespace ISVDemoUsage.Controllers
 
                 if (ClaimsPrincipal.Current.Identity.IsAuthenticated)
                 {
-                    var resourcerString = AzureResourceManagerUtil.GetMetricsResource(organizationId, resourceUri, metricnames);
+                    var resourcerString = AzureResourceManagerUtil.GetMetricsResource(
+                                                                                        organizationId,
+                                                                                        resourceUri,
+                                                                                        metricnames,
+                                                                                        timespan,
+                                                                                        interval,
+                                                                                        aggregation,
+                                                                                        top,
+                                                                                        orderby,
+                                                                                        filter,
+                                                                                        resultType,
+                                                                                        api_version,
+                                                                                        metricnamespace);
                     metricResource = JsonConvert.DeserializeObject<MetricsResource>(resourcerString);
 
                     

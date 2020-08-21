@@ -1,0 +1,38 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect" data-toggle="dropdown" href="#" role="button"
+       aria-haspopup="false" aria-expanded="false">
+        <i class="dripicons-bell noti-icon"></i>
+        <span class="badge badge-pink noti-icon-badge">4</span>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-lg" aria-labelledby="Preview">
+        <!-- item-->
+        <div class="dropdown-item noti-title">
+            <h5><span class="badge badge-danger float-right">5</span>Notificaciones</h5>
+        </div>
+
+        <!-- item-->
+        <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <div class="notify-icon bg-success"><i class="icon-bubble"></i></div>
+            <p class="notify-details">César Agurto te ha enviado un mensaje<small class="text-muted">1 min atrás</small></p>
+        </a>
+
+        <!-- item-->
+        <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <div class="notify-icon bg-info"><i class="icon-user"></i></div>
+            <p class="notify-details">Nuevo usuario registrado.<small class="text-muted">2 min atrás</small></p>
+        </a>
+
+        <!-- item-->
+        <a href="javascript:void(0);" class="dropdown-item notify-item">
+            <div class="notify-icon bg-danger"><i class="icon-like"></i></div>
+            <p class="notify-details">José Soto dió <b>Me gusta</b><small class="text-muted">5 min atrás</small></p>
+        </a>
+
+        <!-- All-->
+        <a href="javascript:void(0);" class="dropdown-item notify-item notify-all">
+            Ver Todo
+        </a>
+
+    </div>
+}

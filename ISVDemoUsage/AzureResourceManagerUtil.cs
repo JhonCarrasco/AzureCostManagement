@@ -20,7 +20,19 @@ namespace ISVDemoUsage
 {
     public static class AzureResourceManagerUtil
     {
-        public static string GetMetricsResource(string organizationId, string resourceUri, string metricnames)
+        public static string GetMetricsResource(
+            string organizationId,
+            string resourceUri,
+            string metricnames,
+            string timespan,
+            string interval,
+            string aggregation,
+            string top,
+            string orderby,
+            string filter,
+            string resultType,
+            string api_version,
+            string metricnamespace)
         {
             string responseString = "";
             try
@@ -30,10 +42,20 @@ namespace ISVDemoUsage
 
                 //string requestUrl = "https://management.azure.com/subscriptions/8db16c05-7fe3-4e62-96b4-dfd26c4e3465/resourceGroups/RGPRODEUS2IGNCOREINFRA001/providers/Microsoft.Compute/virtualMachines/THANOS/providers/microsoft.insights/metrics?api-version=2018-01-01";
                 // Get subscriptions to which the user has some kind of access
-                string requestUrl = string.Format("{0}{1}/providers/microsoft.insights/metrics?api-version=2018-01-01{2}",
+                string requestUrl = string.Format("{0}{1}/providers/microsoft.insights/metrics{2}",
                 ConfigurationManager.AppSettings["ida:AzureResourceManagerUrl"], 
                 resourceUri,
-                UriParameters.GetMetricName(metricnames));
+                UriParameters.GetMetricParameterFormat(
+                    metricnames,
+                    timespan,
+                    interval,
+                    aggregation,
+                    top,
+                    orderby,
+                    filter,
+                    resultType,
+                    api_version,
+                    metricnamespace));
 
 
                 responseString = HttpCallAPI.GetHttpCall(requestUrl, accessToken);
